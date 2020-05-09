@@ -18,6 +18,11 @@ public class ItemUtils {
   }
 
   public static Optional<Color> parseColor(String input) {
+    Optional<DyeColor> optional = parseDyeColor(input);
+    if (optional.isPresent()) {
+      return optional.map(DyeColor::getColor);
+    }
+
     String[] split = input.trim().split(":", 3);
 
     int red = Validate.getNumber(split[0]).orElse(BigDecimal.ZERO).intValue();
