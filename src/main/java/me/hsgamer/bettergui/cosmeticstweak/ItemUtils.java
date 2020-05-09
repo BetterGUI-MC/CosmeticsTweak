@@ -47,19 +47,20 @@ public class ItemUtils {
   }
 
   public static Optional<Pattern> parsePattern(String input) {
-      String[] split = input.trim().split(":", 2);
-      if (split.length != 2) {
-        return Optional.empty();
-      }
-      try {
-        Optional<DyeColor> optional = parseDyeColor(split[1].trim());
-        if (optional.isPresent()) {
-          return Optional.of(new Pattern(optional.get(), PatternType.valueOf(split[0].trim().toUpperCase())));
-        }
-      } catch (IllegalArgumentException e) {
-        // IGNORED
-      }
+    String[] split = input.trim().split(":", 2);
+    if (split.length != 2) {
       return Optional.empty();
+    }
+    try {
+      Optional<DyeColor> optional = parseDyeColor(split[1].trim());
+      if (optional.isPresent()) {
+        return Optional
+            .of(new Pattern(optional.get(), PatternType.valueOf(split[0].trim().toUpperCase())));
+      }
+    } catch (IllegalArgumentException e) {
+      // IGNORED
+    }
+    return Optional.empty();
   }
 
   public static Optional<FireworkEffect> parseFireworkEffect(String input) {
