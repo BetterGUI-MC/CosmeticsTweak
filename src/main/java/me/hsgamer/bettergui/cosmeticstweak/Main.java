@@ -6,6 +6,8 @@ import me.hsgamer.bettergui.cosmeticstweak.property.BannerPattern;
 import me.hsgamer.bettergui.cosmeticstweak.property.Firework;
 import me.hsgamer.bettergui.cosmeticstweak.property.LeatherColor;
 import me.hsgamer.bettergui.cosmeticstweak.property.Potion;
+import me.hsgamer.bettergui.cosmeticstweak.property.PotionColor;
+import me.hsgamer.bettergui.lib.xseries.XMaterial;
 import me.hsgamer.bettergui.object.addon.Addon;
 
 public final class Main extends Addon {
@@ -19,5 +21,8 @@ public final class Main extends Addon {
     PropertyBuilder.registerItemProperty("banner-color", BannerBaseColor.class);
     PropertyBuilder.registerItemProperty("banner-pattern", BannerPattern.class);
     PropertyBuilder.registerItemProperty("pattern", BannerPattern.class);
+    if (XMaterial.supports(11)) {
+      PropertyBuilder.registerItemProperty("potion-color", PotionColor.class);
+    }
   }
 }
