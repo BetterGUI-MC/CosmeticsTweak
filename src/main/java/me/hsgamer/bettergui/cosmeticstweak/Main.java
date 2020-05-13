@@ -18,7 +18,9 @@ public final class Main extends Addon {
     PropertyBuilder.registerItemProperty("effect", Potion.class);
     PropertyBuilder.registerItemProperty("firework", Firework.class);
     PropertyBuilder.registerItemProperty("color", LeatherColor.class);
-    PropertyBuilder.registerItemProperty("banner-color", BannerBaseColor.class);
+    if (!XMaterial.supports(12)) {
+      PropertyBuilder.registerItemProperty("banner-color", BannerBaseColor.class);
+    }
     PropertyBuilder.registerItemProperty("banner-pattern", BannerPattern.class);
     PropertyBuilder.registerItemProperty("pattern", BannerPattern.class);
     if (XMaterial.supports(11)) {
