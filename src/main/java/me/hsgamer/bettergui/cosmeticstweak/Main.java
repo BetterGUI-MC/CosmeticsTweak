@@ -14,17 +14,15 @@ public final class Main extends Addon {
 
   @Override
   public void onEnable() {
-    PropertyBuilder.registerItemProperty("potion", Potion.class);
-    PropertyBuilder.registerItemProperty("effect", Potion.class);
-    PropertyBuilder.registerItemProperty("firework", Firework.class);
-    PropertyBuilder.registerItemProperty("color", LeatherColor.class);
+    PropertyBuilder.registerItemProperty(Potion::new, "potion", "effect");
+    PropertyBuilder.registerItemProperty(Firework::new, "firework");
+    PropertyBuilder.registerItemProperty(LeatherColor::new, "color");
     if (!XMaterial.supports(12)) {
-      PropertyBuilder.registerItemProperty("banner-color", BannerBaseColor.class);
+      PropertyBuilder.registerItemProperty(BannerBaseColor::new, "banner-color");
     }
-    PropertyBuilder.registerItemProperty("banner-pattern", BannerPattern.class);
-    PropertyBuilder.registerItemProperty("pattern", BannerPattern.class);
+    PropertyBuilder.registerItemProperty(BannerPattern::new, "banner-pattern", "pattern");
     if (XMaterial.supports(11)) {
-      PropertyBuilder.registerItemProperty("potion-color", PotionColor.class);
+      PropertyBuilder.registerItemProperty(PotionColor::new, "potion-color");
     }
   }
 }

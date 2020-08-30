@@ -5,7 +5,7 @@ import java.util.List;
 import me.hsgamer.bettergui.cosmeticstweak.ItemUtils;
 import me.hsgamer.bettergui.object.Icon;
 import me.hsgamer.bettergui.object.property.item.ItemProperty;
-import me.hsgamer.bettergui.util.CommonUtils;
+import me.hsgamer.bettergui.util.common.CommonUtils;
 import org.bukkit.block.banner.Pattern;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
